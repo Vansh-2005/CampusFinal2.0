@@ -1,4 +1,4 @@
-package com.notebook.campusfinal.ui.newproject;
+package com.notebook.campusfinal.ui.AddButton;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.notebook.campusfinal.R;
 
-public class NewProjectFragment extends Fragment {
+public class NewFragment extends Fragment {
 
 
 
