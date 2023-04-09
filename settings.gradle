@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CampusFinal2"
 include ':app'
+

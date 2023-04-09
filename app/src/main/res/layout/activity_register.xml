@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#671935"
     android:clipToOutline="true"
-    tools:context="com.notebook.campusfinal.authentication.RegisterActivity"
+    tools:context="com.notebook.campusfinal.module.student.authentication.RegisterActivity"
 
     >
 
