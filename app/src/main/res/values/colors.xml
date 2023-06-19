@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="splash_notificationbar_color">#d3356e</color>
     <color name="login_notificationbar_color">#671935</color>
+    <color name="login_notificationbar_color2">#2c2f49</color>
     <color name="fgpassword_notificationbar_color">#671935</color>
     <color name="register_notificationbar_color">#671935</color>
     <color name="home_notificationbar_color">#96264e</color>

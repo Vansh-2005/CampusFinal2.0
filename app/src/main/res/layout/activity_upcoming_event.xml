@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#2C2F49"
     android:id="@+id/upcomingContainer"
-    tools:context="com.notebook.campusfinal.ui.home.upcomingevent.UpcomingEventActivity">
+    tools:context="com.notebook.campusfinal.module.student.ui.home.upcomingevent.UpcomingEventActivity">
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
