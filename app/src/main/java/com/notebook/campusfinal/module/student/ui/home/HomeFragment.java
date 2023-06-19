@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -25,6 +28,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.notebook.campusfinal.R;
+import com.notebook.campusfinal.module.admin.AdminDashboard;
+import com.notebook.campusfinal.module.student.authentication.LoginActivity;
 import com.notebook.campusfinal.module.student.ui.home.project.infotech.ProjectActivity;
 import com.notebook.campusfinal.module.student.ui.home.upcomingevent.UpcomingEventActivity;
 import com.squareup.picasso.Picasso;
@@ -33,10 +38,9 @@ import com.squareup.picasso.Picasso;
 public class HomeFragment extends Fragment {
 
     private ActionBar actionBar;
-    private TextView upcoming_more,project_more;
-    private ImageView image1,image2,image3,projImg1,projImg2,projImg3,projImg4,projImg5,projImg6,CommImg3,CommImg1,CommImg2;
-    private  DatabaseReference ref1;
-
+    private TextView upcoming_more, project_more;
+    private ImageView image1, image2, image3, projImg1, projImg2, projImg3, projImg4, projImg5, projImg6, CommImg3, CommImg1, CommImg2;
+    private DatabaseReference ref1;
 
 
     @SuppressLint("MissingInflatedId")
@@ -44,38 +48,39 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view= inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-       upcoming_more = (TextView) view.findViewById(R.id.upcoming_more1);
-       project_more = (TextView) view.findViewById(R.id.more_project);
-       image1 =(ImageView) view.findViewById(R.id.image1);
-       image2 =(ImageView) view.findViewById(R.id.image2);
-       image3 =(ImageView) view.findViewById(R.id.image3);
-        projImg1 =(ImageView) view.findViewById(R.id.proImg1);
-        projImg2 =(ImageView) view.findViewById(R.id.proImg2);
-        projImg3 =(ImageView) view.findViewById(R.id.proImg3);
-        projImg4 =(ImageView) view.findViewById(R.id.proImg4);
-        projImg5 =(ImageView) view.findViewById(R.id.proImg5);
-        projImg6 =(ImageView) view.findViewById(R.id.proImg6);
-        CommImg1 =(ImageView) view.findViewById(R.id.CommImg1);
-        CommImg2 =(ImageView) view.findViewById(R.id.CommImg2);
-        CommImg3 =(ImageView) view.findViewById(R.id.CommImg3);
+        upcoming_more = (TextView) view.findViewById(R.id.upcoming_more1);
+        project_more = (TextView) view.findViewById(R.id.more_project);
+        image1 = (ImageView) view.findViewById(R.id.image1);
+        image2 = (ImageView) view.findViewById(R.id.image2);
+        image3 = (ImageView) view.findViewById(R.id.image3);
+        projImg1 = (ImageView) view.findViewById(R.id.proImg1);
+        projImg2 = (ImageView) view.findViewById(R.id.proImg2);
+        projImg3 = (ImageView) view.findViewById(R.id.proImg3);
+        projImg4 = (ImageView) view.findViewById(R.id.proImg4);
+        projImg5 = (ImageView) view.findViewById(R.id.proImg5);
+        projImg6 = (ImageView) view.findViewById(R.id.proImg6);
+        CommImg1 = (ImageView) view.findViewById(R.id.CommImg1);
+        CommImg2 = (ImageView) view.findViewById(R.id.CommImg2);
+        CommImg3 = (ImageView) view.findViewById(R.id.CommImg3);
 
 
-        actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
-        Drawable d=getResources().getDrawable(R.drawable.toolbar);
+        actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        Drawable d = getResources().getDrawable(R.drawable.toolbar);
         actionBar.setBackgroundDrawable(d);
         actionBar.setTitle("Hey User,");
+        setHasOptionsMenu(true);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-       ref1 = database.getReference().child("HOME FRAGMENT");
+        ref1 = database.getReference().child("HOME FRAGMENT");
         //DatabaseReference ref = database.getReference("Sample").child("Sample");
 
         Window window = getActivity().getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.home_notificationbar_color));
+        window.setStatusBarColor(ContextCompat.getColor(getActivity(), R.color.home_notificationbar_color));
 
         UpcomingEvent();
         ProjectImage();
@@ -101,7 +106,6 @@ public class HomeFragment extends Fragment {
         });
 
         return view;
-
 
 
     }
@@ -283,5 +287,26 @@ public class HomeFragment extends Fragment {
             }
         });
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.student_dots_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+       switch (id){
+           case R.id.student_logout:
+               Toast.makeText(getActivity(), "Logout", Toast.LENGTH_SHORT).show();
+                return true;
+           case R.id.action_add:
+               Toast.makeText(getActivity(), "Notification", Toast.LENGTH_SHORT).show();
+               return true;
+
+       }
+        return super.onOptionsItemSelected(item);
     }
 }

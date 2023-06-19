@@ -24,9 +24,6 @@
             android:name="com.notebook.campusfinal.module.student.ui.AddButton.newEvent.NewEventActivity"
             android:exported="false" />
         <activity
-            android:name="com.notebook.campusfinal.module.admin.authentication.AdminLoginActivity"
-            android:exported="true" />
-        <activity
             android:name="com.notebook.campusfinal.module.admin.AdminDashboard"
             android:exported="false" />
         <activity

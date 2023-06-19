@@ -13,14 +13,16 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.notebook.campusfinal.module.admin.authentication.AdminLoginActivity;
+import com.google.android.material.card.MaterialCardView;
+import com.notebook.campusfinal.module.admin.AdminDashboard;
 import com.notebook.campusfinal.module.student.MainActivity;
 import com.notebook.campusfinal.R;
 
 public class LoginActivity extends AppCompatActivity {
 
     private TextView fgpassword , newAccount,continue_btn;
-    private Button Admin_login;
+    private Button Admin_login,Student_login,Admin_continue;
+    private MaterialCardView student_pannel,admin_pannel;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,7 +41,11 @@ public class LoginActivity extends AppCompatActivity {
         newAccount = findViewById(R.id.create_new_account);
         fgpassword = findViewById(R.id.click_here);
         continue_btn = findViewById(R.id.login);
+        student_pannel = findViewById(R.id.student_pannel);
         Admin_login = (Button)findViewById(R.id.admin_button);
+        admin_pannel = findViewById(R.id.admin_pannel);
+        Student_login = findViewById(R.id.Student_login);
+        Admin_continue =findViewById(R.id.admin_continue);
 
         newAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,11 +78,30 @@ public class LoginActivity extends AppCompatActivity {
         Admin_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, AdminLoginActivity.class);
+                student_pannel.setVisibility(View.GONE);
+                admin_pannel.setVisibility(View.VISIBLE);
+//                Intent intent = new Intent(LoginActivity.this, AdminLoginActivity.class);
+//                startActivity(intent);
+//                finish();
+            }
+        });
+        Student_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                student_pannel.setVisibility(View.VISIBLE);
+                admin_pannel.setVisibility(View.GONE);
+//                Intent intent = new Intent(LoginActivity.this, AdminLoginActivity.class);
+//                startActivity(intent);
+//                finish();
+            }
+        });
+        Admin_continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, AdminDashboard.class);
                 startActivity(intent);
                 finish();
             }
         });
-
     }
 }
