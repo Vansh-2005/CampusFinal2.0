@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class HomeFragment extends Fragment {
     private ImageView image1, image2, image3, projImg1, projImg2, projImg3, projImg4, projImg5, projImg6, CommImg3, CommImg1, CommImg2;
     private DatabaseReference ref1;
 
+    private Button join1;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -65,11 +67,12 @@ public class HomeFragment extends Fragment {
         CommImg2 = (ImageView) view.findViewById(R.id.CommImg2);
         CommImg3 = (ImageView) view.findViewById(R.id.CommImg3);
 
+        join1 = (Button) view.findViewById(R.id.join1);
 
         actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         Drawable d = getResources().getDrawable(R.drawable.toolbar);
         actionBar.setBackgroundDrawable(d);
-        actionBar.setTitle("Hey User,");
+        actionBar.setTitle("Hey Kartik,");
         setHasOptionsMenu(true);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -86,6 +89,13 @@ public class HomeFragment extends Fragment {
         ProjectImage();
         CommunitiesImage();
 
+
+        join1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Coming Soon...", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         upcoming_more.setOnClickListener(new View.OnClickListener() {
             @Override

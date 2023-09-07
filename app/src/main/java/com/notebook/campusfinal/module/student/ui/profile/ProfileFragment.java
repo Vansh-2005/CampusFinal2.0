@@ -18,11 +18,12 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.notebook.campusfinal.R;
+import com.notebook.campusfinal.module.student.authentication.LoginActivity;
 
 
 public class ProfileFragment extends Fragment {
 
-    private TextView logout;
+    private TextView logout,edit_text;
 
 
     @Override
@@ -32,6 +33,7 @@ public class ProfileFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_profile, container, false);
 
        logout = (TextView) view.findViewById(R.id.logout_text);
+        edit_text = (TextView) view.findViewById(R.id.edit_text);
 
         ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         ColorDrawable colorDrawable  = new ColorDrawable(Color.parseColor("#2c2f49"));
@@ -46,16 +48,23 @@ public class ProfileFragment extends Fragment {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.profile_notificationbar_color));
 
-//        logout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), LoginActivity.class);
-//                startActivity(intent);
-//                getActivity().finish();
-//
-//                Toast.makeText(getActivity(), "Logout Succesfully", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+
+                Toast.makeText(getActivity(), "Logout Succesfully", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        edit_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Coming Soon...", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return view;
     }

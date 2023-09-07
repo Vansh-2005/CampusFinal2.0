@@ -74,20 +74,40 @@
                             android:scaleType="fitXY"
                             android:id="@+id/image1"/>
 
-                        <LinearLayout
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#80000000"
+                        android:text="Marathon 2023"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:padding="28dp"
+                        android:gravity="bottom"
+                        android:layout_gravity="bottom"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|bottom"
+                        android:layout_margin="20dp">
+
+                        <Button
+                            android:id="@+id/join1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="right|bottom"
-                            android:layout_margin="20dp">
+                            android:background="@drawable/join_btn_bg"
+                            android:text="Join"
+                            android:textColor="@color/white" />
 
-                            <Button
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/join_btn_bg"
-                                android:text="Join"
-                                android:textColor="@color/white" />
+                    </LinearLayout>
 
-                        </LinearLayout>
+                </FrameLayout>
 
                     </com.google.android.material.card.MaterialCardView>
 
@@ -112,20 +132,40 @@
                             android:scaleType="fitXY"
                             android:id="@+id/image2"/>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right|bottom"
-                            android:layout_margin="20dp">
 
-                            <Button
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#80000000"
+                                android:text="Counceiling"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:padding="28dp"
+                                android:gravity="bottom"
+                                android:layout_gravity="bottom"
+                                />
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/join_btn_bg"
-                                android:text="Join"
-                                android:textColor="@color/white" />
+                                android:layout_gravity="right|bottom"
+                                android:layout_margin="20dp">
 
-                        </LinearLayout>
+                                <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/join_btn_bg"
+                                    android:text="Join"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </FrameLayout>
 
 
                     </com.google.android.material.card.MaterialCardView>
@@ -151,21 +191,39 @@
                             android:scaleType="fitXY"
                             android:id="@+id/image3"/>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right|bottom"
-                            android:layout_margin="20dp">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                            <Button
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#80000000"
+                                android:text="Rhythm 2023"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:padding="28dp"
+                                android:gravity="bottom"
+                                android:layout_gravity="bottom"
+                                />
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/join_btn_bg"
-                                android:text="Join"
-                                android:textColor="@color/white" />
+                                android:layout_gravity="right|bottom"
+                                android:layout_margin="20dp">
 
-                        </LinearLayout>
+                                <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/join_btn_bg"
+                                    android:text="Join"
+                                    android:textColor="@color/white" />
 
+                            </LinearLayout>
+
+                        </FrameLayout>
 
                     </com.google.android.material.card.MaterialCardView>
 
@@ -238,7 +296,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:clipToOutline="true"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             android:id="@+id/proImg1"/>
 
                     </com.google.android.material.card.MaterialCardView>
@@ -251,7 +309,7 @@
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="4dp"
                         android:layout_marginBottom="4dp"
-                        android:text="CAKE WEBSITE"
+                        android:text="DPBS College App"
                         android:textColor="@color/white"
                         android:textSize="12sp" />
 
@@ -267,7 +325,8 @@
                         android:layout_height="120dp"
                         app:cardBackgroundColor="#4D000000"
                         app:cardCornerRadius="20dp"
-                        app:cardElevation="0dp" >
+                        app:cardElevation="0dp"
+                        android:id="@+id/pc2">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -276,6 +335,18 @@
                             android:scaleType="fitXY"
                             android:id="@+id/proImg2"/>
                     </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pc2"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Campus App"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -288,7 +359,8 @@
                         android:layout_height="120dp"
                         app:cardBackgroundColor="#4D000000"
                         app:cardCornerRadius="20dp"
-                        app:cardElevation="0dp" >
+                        app:cardElevation="0dp"
+                        android:id="@+id/pc3">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -297,6 +369,17 @@
                             android:scaleType="fitXY"
                             android:id="@+id/proImg3"/>
                     </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pc3"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Designing"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -309,7 +392,8 @@
                         android:layout_height="120dp"
                         app:cardBackgroundColor="#4D000000"
                         app:cardCornerRadius="20dp"
-                        app:cardElevation="0dp" >
+                        app:cardElevation="0dp"
+                        android:id="@+id/pc4">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -317,6 +401,19 @@
                             android:scaleType="fitXY"
                             android:id="@+id/proImg4"/>
                     </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pc4"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Business Analysis"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -329,14 +426,26 @@
                         android:layout_height="120dp"
                         app:cardBackgroundColor="#4D000000"
                         app:cardCornerRadius="20dp"
-                        app:cardElevation="0dp">
+                        app:cardElevation="0dp"
+                        android:id="@+id/pc5">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:clipToOutline="true"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             android:id="@+id/proImg5"/>
                     </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pc5"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="DPBS App"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -349,7 +458,8 @@
                         android:layout_height="120dp"
                         app:cardBackgroundColor="#4D000000"
                         app:cardCornerRadius="20dp"
-                        app:cardElevation="0dp">
+                        app:cardElevation="0dp"
+                        android:id="@+id/pc6">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -357,6 +467,17 @@
                             android:scaleType="fitXY"
                             android:id="@+id/proImg6"/>
                     </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pc6"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Campus App"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -411,9 +532,25 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
+                    android:scaleType="centerCrop"
                     android:clipToOutline="true"
                     android:id="@+id/CommImg1"
+                    />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#80000000"
+                    android:text="Go Green"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="28dp"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom"
                     />
 
                 <LinearLayout
@@ -431,7 +568,7 @@
 
                 </LinearLayout>
 
-
+                </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -447,46 +584,27 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
+                    android:scaleType="centerCrop"
                     android:clipToOutline="true"
                     android:id="@+id/CommImg2"
                     />
 
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|bottom"
-                    android:layout_margin="20dp">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/join_btn_bg"
-                        android:text="Join"
-                        android:textColor="@color/white" />
-
-                </LinearLayout>
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="320dp"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:clipToOutline="true"
-                app:cardBackgroundColor="#4D000000"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="0dp">
-
-                <ImageView
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:clipToOutline="true"
-                    android:id="@+id/CommImg3"
+                    android:background="#80000000"
+                    android:text="Narional Services"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="28dp"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom"
                     />
 
 
@@ -505,6 +623,59 @@
 
                 </LinearLayout>
 
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="320dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:clipToOutline="true"
+                app:cardBackgroundColor="#4D000000"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true"
+                    android:id="@+id/CommImg3"
+                    />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#80000000"
+                    android:text="Sports"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="28dp"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:layout_margin="20dp">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/join_btn_bg"
+                        android:text="Join"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+                </FrameLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
